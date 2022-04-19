@@ -1,15 +1,22 @@
 // funcionalidade de expandir/colapsar da secao "resumo"
-let resumoDOM = document.getElementById("resumo");
 
+//variaveis da secao "resumo"
+let btnVerMais = document.getElementById("btn-ver-mais");
+let resumoDOM = document.getElementById("resumo");
+let resumoConteudo = document.getElementById("resumo__conteudo");
 let resumoExpandido = false;
 
 resumoDOM.addEventListener("click", () => {
-	//resumoDOM.classList.toggle("resumo-expandido");
-
 	if (resumoExpandido) {
-		resumoDOM.style.height = "200px";
+		//colapsa o resumo e mostra o "ver mais"
+
+		resumoConteudo.style.height = "115px";
+		btnVerMais.style.display = "block";
 	} else {
-		resumoDOM.style.height = resumoDOM.scrollHeight + "px";
+		//expande o resumo e esconde o "ver mais"
+
+		resumoConteudo.style.height = resumoConteudo.scrollHeight + "px";
+		btnVerMais.style.display = "none";
 	}
 	resumoExpandido = !resumoExpandido;
 });
