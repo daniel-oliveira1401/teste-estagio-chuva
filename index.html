@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- CDN bootstrap (CSS) -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<!-- CDN bootstrap (Javascript) -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Fontes 'quicksand' e 'roboto' -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="styles.css" />
+		<script src="gerenciador-layout.js" defer></script>
+		<title>Exercício Frontend - Chuva</title>
+	</head>
+	<body>
+		<div id="site" class="row gx-0">
+			<!-- barra de navegacao -->
+			<div class="coluna-nav sticky-top col-md-2">
+				<nav class="navbar navbar-expand-md navbar-light bg-light py-0">
+					<div class="container-fluid flex-md-column align-items-md-start">
+						<div class="container-fluid d-flex">
+							<!-- Icone de toggle da navbar (aparece apenas quando em mobile) -->
+							<button
+								class="navbar-toggler"
+								type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#navegacao"
+								aria-controls="navegacao"
+								aria-expanded="false"
+								aria-label="Toggle navigation"
+							>
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<a
+								href="#"
+								class="navbar-brand d-flex flex-md-column w-100 py-0 me-0"
+							>
+								<h4 class="logo-text mb-0">SLACA 2019</h4>
+
+								<img
+									src="./assets/images/dewey-4-logo.png"
+									alt="Logo 13 SLACA"
+									id="logo-img"
+									class="mw-100 mh-100 d-inline-block d-md-block rounded"
+								/>
+							</a>
+						</div>
+
+						<div
+							class="collapse navbar-collapse text-center text-md-start w-100"
+							id="navegacao"
+						>
+							<ul class="navbar-nav flex-column w-100">
+								<li class="nav-item">
+									<a class="nav-link" href="#">Apresentacao</a>
+								</li>
+								<hr class="nav-divider" />
+								<li class="nav-item">
+									<a class="nav-link" href="#">Comites</a>
+								</li>
+								<hr class="nav-divider" />
+								<li class="nav-item">
+									<a class="nav-link" href="#">Autores</a>
+								</li>
+								<hr class="nav-divider" />
+								<li class="nav-item">
+									<a class="nav-link" href="#">Eixos tematicos</a>
+								</li>
+								<hr class="nav-divider" />
+								<li class="nav-item">
+									<a class="nav-link active" href="#">Trabalhos</a>
+								</li>
+								<hr class="nav-divider" />
+								<li class="nav-item">
+									<a class="nav-link" href="#">Contato</a>
+								</li>
+								<hr class="nav-divider" />
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!-- conteudo da pagina -->
+			<div class="coluna-conteudo col-md-10">
+				<header class="header row gx-0">
+					<div class="col-lg-8">
+						<p class="header__descricao-curta">
+							Anais do Simpósio Latino Americado de Ciências de Alimentos
+						</p>
+						<p class="header__descricao">
+							Anais do 13º Simpósio Latina Americano de Ciência de Alimentos
+						</p>
+						<p class="header__issn">ISSN: 1234-5678</p>
+					</div>
+					<div
+						class="col-lg-4 d-flex justify-content-end align-items-center user-info"
+					>
+						<div class="user-info__text">
+							<div class="user-info__greetings">Bem vindo!</div>
+							<div class="user-info__email">alguem12@galoascrience.com</div>
+						</div>
+						<div class="user-info__img-container position-relative">
+							<img
+								src="./assets/images/usuario-exemplo.png"
+								alt="Imagem usuario"
+								class="user-info__img rounded-circle"
+							/>
+							<div class="user-info__img-badge rounded-circle">2</div>
+						</div>
+					</div>
+				</header>
+				<main class="container">
+					<section class="row g-0 apresentacao-conteudo">
+						<div class="col-lg-9 coluna-video mb-2 mb-lg-0">
+							<h3 class="coluna-video__titulo">
+								Análise sensorial de preparações funcionais desenvolvidas para
+								escolares entre 09 e 15 anos, do município de Campinas/SP
+							</h3>
+							<div class="coluna-video__video-container"></div>
+						</div>
+						<div class="col-lg-3 coluna-detalhes">
+							<div class="coluna-detalhes__botoes">
+								<button class="btn-download btn">
+									<img
+										src="./assets/icons/icon-download.svg"
+										alt="icone de download"
+										class="d-inline-block"
+									/><span>Download</span>
+								</button>
+								<button class="btn btn-favorito">
+									<img
+										src="./assets/icons/icon-star.svg"
+										alt="icone de favorito"
+									/>
+								</button>
+								<button class="btn btn-doi">
+									<img src="./assets/icons/icon-doi.svg" alt="icone doi" />
+								</button>
+							</div>
+							<h3>COMO CITAR ESSE TRABALHO?</h3>
+							<div class="coluna-detalhes__painel">
+								<h2>Detalhes</h2>
+								<div class="coluna-detalhes__detalhes">
+									<div class="position-absolute bottom-0 top-0 start-0 end-0">
+										<p class="tipo-apresentacao detalhe">
+											<span class="tipo-apresentacao__label"
+												>Tipo de Apresentação:</span
+											>
+											<span class="tipo-apresentacao__valor">Pôster</span>
+										</p>
+										<p class="eixo-tematico detalhe">
+											<span class="eixo-tematico__label">Eixo temático:</span>
+											<span class="eixo-tematico__valor"
+												>Alimentação e saúde (AS)</span
+											>
+										</p>
+										<p class="palavras-chaves detalhe">
+											<span class="palavras-chaves__label"
+												>Palavras-chaves</span
+											>
+											<span class="palavras-chaves__valor"
+												>Alimentos funcionais, alimentação escolar.</span
+											>
+										</p>
+										<section class="autores">
+											<h3 class="autores__label">Autores:</h3>
+											<p class="autor">Galileo Galilei¹</p>
+											<p class="autor">Berta Lange de Morretes²</p>
+											<p class="autor">Isaac Newton³</p>
+											<p class="autor">Cesar Lattes¹</p>
+											<p class="autor">Stephen Hawking⁴</p>
+										</section>
+										<footer>
+											<p class="nota-rodape">
+												¹Universidade Estadual de Campinas
+											</p>
+											<p class="nota-rodape">²Universidade de São Paulo</p>
+											<p class="nota-rodape">
+												³Instituto Nacional de Pesquisas Espaciais
+											</p>
+											<p class="nota-rodape">
+												⁴Universidade Federal do Rio de Janeiro
+											</p>
+										</footer>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section id="resumo" class="resumo">
+						<h2 class="resumo__label">Resumo</h2>
+
+						<div class="resumo-conteudo">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+							obcaecati fugiat, blanditiis odio accusamus at similique ipsum
+							dolor. Reprehenderit architecto eos similique adipisci obcaecati
+							iste magnam? Illum itaque ut aliquam. Qui aliquam, architecto
+							doloremque incidunt laudantium, ab et iste corporis dolorum
+							provident tempore, omnis nulla laboriosam! Impedit, aut eius
+							excepturi fugiat et id accusamus at, eligendi veritatis suscipit
+							nam voluptas. Quas facere, vel dicta quod cumque illo non eaque
+							quasi odit rerum, maxime nulla! Architecto quaerat minima amet
+							recusandae consequatur maxime! Et provident dolorem, nisi a
+							laborum earum explicabo tempora. Optio reprehenderit dolorem iste
+							nobis beatae deserunt id blanditiis quasi et, maiores quidem
+							ratione reiciendis sunt, aperiam officia quam non mollitia
+							delectus sit harum pariatur! Cumque nesciunt dolore eum
+							architecto. Sit vel cupiditate deleniti dolor molestiae iste quas,
+							provident earum ex iusto! Amet delectus ex quia quibusdam officiis
+							mollitia qui. Quam, vel? Expedita minus blanditiis quaerat
+							nesciunt animi quasi quibusdam? Sunt eligendi animi quaerat
+							voluptatibus ducimus, debitis cupiditate cumque natus ullam!
+							Adipisci numquam aut iure a pariatur non doloribus, vitae
+							assumenda rerum dolor ut praesentium perspiciatis vero labore
+							tempora. Aperiam. Eos eum illo doloremque expedita saepe minus
+							voluptatibus corrupti. Eligendi fugiat vitae quasi. Vel quisquam
+							magnam fuga, adipisci tempora veritatis consequuntur. Ullam
+							aspernatur dolores hic repellendus amet a maxime eos! Quia cum
+							nostrum maiores illo architecto laboriosam necessitatibus delectus
+							doloremque. Corrupti, quasi. Et magnam voluptatem, quis tempora
+							dicta sunt fugit explicabo iste, fugiat numquam expedita atque ea
+							amet voluptates nisi? Voluptate, rerum voluptatem? Mollitia
+							distinctio quasi fuga dolorem quam reprehenderit dolor, laborum
+							tempore dicta exercitationem temporibus voluptates veniam
+							consequuntur hic harum ipsum sit pariatur natus atque excepturi
+							ex, voluptatum at. Fugit, dignissimos? Veritatis et minima in
+							alias explicabo eius enim provident ad, ex perferendis porro
+							maiores aspernatur exercitationem. Cupiditate officiis eaque
+							ipsum, harum natus laborum rerum ullam quibusdam optio animi!
+							Dignissimos natus, a cumque sed fugiat, nemo ducimus ab dolorem id
+							quaerat ratione facilis. Voluptas atque tempora quasi incidunt
+							quisquam perspiciatis, distinctio nisi voluptatem praesentium cum
+							ut sapiente neque magnam. Alias accusantium eum odio a odit
+							repudiandae neque ratione, ducimus aliquam ut pariatur corrupti
+							itaque provident facilis repellat. Similique nesciunt deleniti
+							aspernatur id consectetur perspiciatis sint doloremque tempora
+							ipsum nihil? Et aliquam quam consequatur ex sequi, voluptas, nulla
+							hic eos dolores porro ab quae mollitia enim corporis atque, fuga
+							nisi voluptates deleniti. Quis consequuntur fugiat animi labore
+							repellendus officiis ipsum? Nihil harum facilis fuga veritatis
+							quaerat quis facere dolorem rem eos, quos corporis omnis laborum
+							quasi magni quia aliquam eaque culpa architecto quam impedit odit
+							enim nemo itaque! Est, beatae? Odio eaque et qui, rem magni sunt
+							perspiciatis dicta a molestias officiis nemo dolores vero! Quis
+							odio, eveniet optio molestias ab fugit praesentium similique
+							quisquam aliquid mollitia ratione qui dolore! Amet suscipit, at
+							quis odit non eveniet eos enim iusto quae vitae voluptate quam,
+							impedit odio eius a ipsa nesciunt doloremque saepe distinctio
+							minima atque doloribus, aut accusantium. Saepe, quia. Nobis eius
+							cupiditate doloribus modi, facere atque temporibus sequi tenetur
+							omnis, expedita natus. Blanditiis pariatur in eveniet repellat,
+							delectus cupiditate aperiam aliquid perferendis repudiandae fugit
+							doloremque consequuntur odio unde molestiae. Reiciendis
+							consequuntur ab eligendi dicta quaerat enim facere in voluptas
+							eveniet quasi modi animi dolor porro, nihil fugiat vel nostrum
+							maiores nisi, quis rerum debitis voluptates? Non ipsa provident
+							excepturi. Placeat provident voluptas voluptatum ducimus quo!
+							Vitae quia, fuga maxime eligendi in, minus ad laboriosam quasi
+							voluptas commodi illo molestiae animi asperiores corrupti
+							architecto molestias harum ab enim dolorem non! Reprehenderit
+							placeat est culpa, illo tenetur cum natus rerum velit iure
+							veritatis expedita eius iusto dolorem architecto inventore error
+							corporis necessitatibus doloremque! Mollitia voluptatibus
+							reprehenderit officia error ipsa ipsam soluta. Alias voluptatibus
+							vitae ut saepe, eveniet beatae tempore iusto dolorem debitis qui
+							consequuntur odit numquam quae aut inventore veritatis doloremque
+							repudiandae, autem aliquid consequatur quos. Soluta autem vero
+							dolorem aliquam. Molestiae optio dignissimos est, odio provident
+							repellat voluptates facere. Aliquid commodi dolores molestiae
+							voluptatum facere, aperiam at iste. Aliquid, dolorum iusto fugiat
+							laborum maxime accusamus modi dolor magnam! Deserunt, nisi. Eius
+							esse unde, reiciendis, saepe cupiditate nobis officiis nisi quis
+							dolor necessitatibus minima facilis ratione cumque modi quae!
+							Suscipit velit aspernatur nam magni nisi odio iusto id officiis
+							eaque cupiditate! Hic praesentium voluptatum, dolores, atque,
+							facere neque molestias provident nemo laudantium laboriosam vel.
+							Totam aliquam autem nesciunt voluptates cum. Atque assumenda odio
+							ea itaque consequatur sapiente nesciunt, ipsa excepturi
+							voluptatem! Suscipit nam placeat nesciunt, quis animi expedita
+							numquam ullam facilis nobis impedit labore cupiditate, ex
+							recusandae ab vitae et veritatis sint! Nesciunt omnis minus fugiat
+							nemo impedit iure mollitia eveniet? Maxime rerum distinctio
+							delectus iure quos voluptas atque earum iusto exercitationem hic,
+							eveniet ea quasi dolore incidunt adipisci deserunt nesciunt
+							placeat magni sequi quia porro possimus perspiciatis illo ab!
+							Ipsa? Ratione natus facere sint corrupti, doloribus ea quidem
+							perferendis dolor adipisci iste explicabo ex expedita aperiam
+							asperiores quia nesciunt rerum amet eum sunt. Illo nihil dolore
+							quae, ipsa praesentium consequatur? Sed fuga corrupti cupiditate
+							distinctio id alias molestias vero, sapiente, quibusdam sit
+							quisquam ipsum aliquam quo illum provident facilis dolore ipsa,
+							facere impedit! Nihil est rerum obcaecati tempore qui quod. Nemo,
+							cum perspiciatis recusandae odit laborum alias architecto!
+							Cupiditate autem aspernatur unde quam, magnam, minima molestias
+							voluptate maxime perferendis dolorem, reprehenderit odit.
+							Veritatis obcaecati animi totam placeat temporibus at blanditiis!
+							Illo incidunt, corrupti quas labore officia reiciendis illum
+							aspernatur! Ea quam delectus velit totam, molestiae, voluptate
+							veniam numquam dolores autem officia voluptatum recusandae ab!
+							Beatae suscipit eveniet sunt deserunt provident.
+						</div>
+					</section>
+				</main>
+				<footer></footer>
+			</div>
+		</div>
+	</body>
+</html>
