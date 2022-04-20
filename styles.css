@@ -238,6 +238,7 @@ nav.navbar {
 	line-height: 25px;
 	letter-spacing: 0.05em;
 	color: #ffffff;
+	margin-bottom: 5px;
 }
 
 .legenda .legenda__descricao {
@@ -247,7 +248,7 @@ nav.navbar {
 	font-size: 20px;
 	line-height: 25px;
 	letter-spacing: 0.05em;
-
+	margin-bottom: 0px;
 	color: #ffffff;
 }
 
@@ -692,6 +693,30 @@ nav.navbar {
 
 	.navbar-toggler:focus {
 		box-shadow: none;
+	}
+
+	.video-overlay {
+		padding: 5px;
+	}
+
+	.video-overlay__titulo {
+		font-size: 15px;
+		overflow: hidden;
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		white-space: normal;
+		text-overflow: ellipsis;
+		max-width: 100%;
+		display: -webkit-box;
+	}
+
+	.legenda .legenda__nome {
+		font-size: 20px;
+	}
+
+	.legenda .legenda__descricao {
+		font-size: 15px;
 	}
 }
 
