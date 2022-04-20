@@ -21,10 +21,15 @@ resumoDOM.addEventListener("click", () => {
 	resumoExpandido = !resumoExpandido;
 });
 
-//controle dos comentarios
+//caixa de entrada de texto para novo topico
 
-/*
+let quill = new Quill("#editor-texto", {
+	modules: {
+		toolbar: {
+			container: "#editor-toolbar__toolbar"
+		}
+	},
+	theme: "snow"
+});
 
-quando clicar no texto do comentario, o body dele deve expandir igual acontece no resumo
-
-*/
+console.log(quill);

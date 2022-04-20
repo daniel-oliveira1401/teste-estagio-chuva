@@ -108,10 +108,46 @@ nav.navbar {
 }
 
 /* header - idioma */
+
+.btn-idioma-container {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding-bottom: 8px;
+	padding-top: 5px;
+	padding-left: 9px;
+	margin-right: 22px;
+}
+
+/* resolver a descentralizacao do icone por conta do espaco em branco
+que esta presente na parte superior da imagem */
+.icon-idioma {
+	position: relative;
+	top: -1px;
+}
+
 .select-idioma {
-	width: min-content;
+	box-sizing: content-box;
+	width: 6ch;
+	background-image: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
 	background-image: url("./assets/icons/icon-dropdown.svg");
-	background-size: 6px 4px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: right 13px center;
+	padding-right: 24px;
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+
+	/* identical to box height */
+
+	color: #333333;
 }
 
 .select-idioma-icon {
@@ -119,6 +155,13 @@ nav.navbar {
 }
 
 /* header - informacao de usuario */
+
+.user-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
 
 .user-info__img {
 	height: 30px;
@@ -441,7 +484,7 @@ nav.navbar {
 	text-decoration: none;
 }
 
-/* secao Discussoes */
+/* ===================== secao Discussoes ==============================*/
 
 .discussoes {
 	border: 1px solid #ececec;
@@ -464,6 +507,8 @@ nav.navbar {
 .discussoes__conteudo {
 	padding: 15px;
 }
+
+/* ====================== criar topico ================================ */
 
 .home-topico {
 	display: flex;
@@ -538,7 +583,105 @@ nav.navbar {
 	color: #ffffff;
 }
 
-/* perguntas */
+/* ========================= editor de novo topico ======================== */
+
+.novo-topico {
+	width: 100%;
+}
+
+.novo-topico__header {
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	text-align: center;
+	color: #5c5c5c;
+	margin-bottom: 22px;
+}
+
+.novo-topico__divider {
+	border: 1px solid #e7e7e7;
+	margin-bottom: 30px;
+}
+
+.assunto {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.assunto__label {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	color: #ed7839;
+	margin-bottom: 1px;
+}
+
+.assunto__input {
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	padding-top: 10px;
+	padding-bottom: 11px;
+	padding-left: 23px;
+	padding-right: 23px;
+}
+
+.conteudo {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+.conteudo__label {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	color: #ed7839;
+	margin-bottom: 4px;
+}
+
+.conteudo__input {
+	border: 1px solid #ccc;
+	border-radius: 3px 3px 0px 0px;
+
+	resize: none;
+	height: 200px;
+	width: 100%;
+}
+
+#editor-toolbar {
+	display: flex;
+}
+
+#editor-toolbar__toolbar {
+	flex-grow: 7;
+	border-top: none;
+	border-radius: 0px 0px 0px 3px;
+	display: flex;
+	background: #eaf1f2;
+}
+
+.btn-enviar-novo-topico {
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 16px;
+	text-align: center;
+	border: none;
+	color: #ffffff;
+	flex-grow: 3;
+	background: linear-gradient(180deg, #feb154 0%, #f1833e 100%);
+	border-radius: 0px 0px 3px 0px;
+}
+
+/* ================================ perguntas ==============================*/
 
 .pergunta {
 	border-radius: 4px;
@@ -680,6 +823,16 @@ nav.navbar {
 
 	#site {
 		position: relative;
+	}
+
+	main.container {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+	header.header {
+		padding-right: 5px;
+		padding-left: 5px;
 	}
 
 	.coluna-nav {
