@@ -187,6 +187,68 @@ nav.navbar {
 	width: 100%;
 
 	background-color: darkseagreen;
+	border-radius: 3px;
+	position: relative;
+}
+
+.video {
+	width: 100%;
+}
+
+.video-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(141, 53, 6, 0.5);
+	padding-top: 35px;
+	padding-left: 32px;
+	padding-right: 17px;
+	padding-bottom: 52px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.video-overlay__titulo {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 25px;
+
+	/* or 104% */
+	letter-spacing: 0.05em;
+
+	color: #ffffff;
+}
+
+.video-overlay__legenda {
+	display: flex;
+	align-items: center;
+	gap: 19px;
+}
+
+.legenda .legenda__nome {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-size: 34px;
+	line-height: 25px;
+	letter-spacing: 0.05em;
+	color: #ffffff;
+}
+
+.legenda .legenda__descricao {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-size: 20px;
+	line-height: 25px;
+	letter-spacing: 0.05em;
+
+	color: #ffffff;
 }
 
 /* coluna de detalhes */
@@ -418,6 +480,12 @@ nav.navbar {
 	color: #ed7839;
 }
 
+.barra-icones {
+	display: flex;
+	gap: 51.74px;
+	margin-bottom: 35.06px;
+}
+
 .home-topico > p {
 	font-family: "Quicksand";
 	font-style: normal;
@@ -469,11 +537,7 @@ nav.navbar {
 	color: #ffffff;
 }
 
-.barra-icones {
-	display: flex;
-	gap: 51.74px;
-	margin-bottom: 35.06px;
-}
+/* perguntas */
 
 .pergunta {
 	border-radius: 4px;
@@ -506,9 +570,6 @@ nav.navbar {
 	font-weight: 500;
 	font-size: 12px;
 	line-height: 15px;
-
-	/* identical to box height */
-
 	color: #5c5c5c;
 }
 
@@ -540,6 +601,7 @@ nav.navbar {
 	display: grid;
 	place-items: center;
 	max-height: 18px;
+	background-color: transparent;
 }
 
 .pergunta-footer .respostas-text {

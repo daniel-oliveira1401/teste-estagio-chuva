@@ -20,3 +20,11 @@ resumoDOM.addEventListener("click", () => {
 	}
 	resumoExpandido = !resumoExpandido;
 });
+
+//controle dos comentarios
+
+/*
+
+quando clicar no texto do comentario, o body dele deve expandir igual acontece no resumo
+
+*/
