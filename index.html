@@ -32,8 +32,16 @@
 			rel="stylesheet"
 		/>
 
+		<!-- jquery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+
 		<link rel="stylesheet" href="styles.css" />
 		<script src="gerenciador-layout.js" defer></script>
+		<script src="funcionalidades.js" defer></script>
 		<title>Exercício Frontend - Chuva</title>
 	</head>
 	<body>
@@ -293,7 +301,7 @@
 					<section class="discussoes">
 						<h2 class="discussoes__label">Discussões</h2>
 						<div class="discussoes__conteudo">
-							<div class="home-topico d-none">
+							<div id="home-topico" class="home-topico">
 								<h3>Compartilhe suas ideias ou dúvidas com os autores!</h3>
 								<div class="barra-icones">
 									<img
@@ -315,7 +323,11 @@
 									sugestões para o autor!
 								</p>
 								<div class="btn-criar-topico">
-									<button class="btn-criar-topico__btn" type="button">
+									<button
+										id="btn-criar-topico"
+										class="btn-criar-topico__btn"
+										type="button"
+									>
 										<img
 											src="./assets/icons/icon-mais.svg"
 											class="d-inline-block"
@@ -326,7 +338,7 @@
 									<div class="btn-criar-topico__divisor"></div>
 								</div>
 							</div>
-							<form class="novo-topico">
+							<form id="novo-topico" class="novo-topico">
 								<h4 class="novo-topico__header">
 									Tem uma dúvida ou sugestão? Compartilhe seu feedback com os
 									autores!
@@ -347,192 +359,224 @@
 											<button class="ql-bold">B</button>
 											<button class="ql-italic">I</button>
 										</div>
-										<button type="submit" class="btn-enviar-novo-topico">
+										<button
+											id="btn-enviar-novo-topico"
+											type="submit"
+											class="btn-enviar-novo-topico"
+										>
 											Enviar
 										</button>
 									</div>
 								</div>
 								<div class="novo-topico__divider"></div>
 							</form>
-							<div class="pergunta">
-								<div class="pergunta-container">
-									<header class="pergunta-header">
-										<div class="pergunta__assunto">
-											Assunto da pergunta aparece aqui
-										</div>
-										<div class="pergunta__autor">Carlos Henrique Santos</div>
-									</header>
-									<div class="pergunta-body">
-										Comecinho da pergunta aparece aqui resente relato
-										inscreve-se no campo da análise da dimensão e impacto de
-										processo formativo situado impacto de processo formativo
-										processo...
-									</div>
-									<footer class="pergunta-footer">
-										<button class="btn-mais">
-											<img src="./assets/icons/more.svg" alt="icone de menu" />
-										</button>
-										<button class="btn-like">
-											<img
-												src="./assets/icons/icon-favorite.svg"
-												alt="Icone de like da pergunta"
-											/>
-										</button>
-										<span>1 like</span>
-										<span
-											data-bs-target="#collapse-respostas1"
-											data-bs-toggle="collapse"
-											class="respostas-text"
-											>1 resposta</span
-										>
-									</footer>
-								</div>
-								<div
-									id="collapse-respostas1"
-									class="pergunta-respostas collapse"
-								>
-									<div class="resposta resposta-autor">
-										<div class="resposta__conteudo">
-											<div class="resposta-header">
-												Adriano da Silva
-												<div class="autor-badge">
-													<span>Autor</span>
-													<img
-														src="./assets/icons/icon-autor-coautor.svg"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="resposta-body">
-												Resposta do autor é aqui. Relato inscreve-se no campo da
-												análise da dimensão e impacto de processo formativo
-												situado impacto de processo formativo processo resente
-												relato inscreve-se no campo da análise da dimensão e
-												impacto de processo formativo situado impacto de
-												processo formativo processo.
-											</div>
-										</div>
-									</div>
+							<div class="agradecimento-topico">
+								<h2>Seu tópico foi enviado com sucesso! :D</h2>
+								<h4>
+									Agradecemos por sua contribuição, uma notificação será enviada
+									ao seu email assim que seu tópico for respondido!
+								</h4>
+								<a href="#">Descubra outros trabalhos!</a>
+								<div id="btn-criar-novo-topico" class="btn-criar-topico">
+									<button
+										id="btn-criar-topico"
+										class="btn-criar-topico__btn"
+										type="button"
+									>
+										<span>criar novo tópico</span>
+									</button>
+									<div class="btn-criar-topico__divisor"></div>
 								</div>
 							</div>
-							<div class="pergunta">
-								<div class="pergunta-container">
-									<header class="pergunta-header">
-										<div class="pergunta__assunto">
-											Assunto da pergunta aparece aqui
+							<div class="perguntas">
+								<div class="pergunta">
+									<div class="pergunta-container">
+										<header class="pergunta-header">
+											<div class="pergunta__assunto">
+												Assunto da pergunta aparece aqui
+											</div>
+											<div class="pergunta__autor">Carlos Henrique Santos</div>
+										</header>
+										<div class="pergunta-body">
+											Comecinho da pergunta aparece aqui resente relato
+											inscreve-se no campo da análise da dimensão e impacto de
+											processo formativo situado impacto de processo formativo
+											processo...
 										</div>
-										<div class="pergunta__autor">Carlos Henrique Santos</div>
-									</header>
-									<div class="pergunta-body">
-										Comecinho da pergunta aparece aqui resente relato
-										inscreve-se no campo da análise da dimensão e impacto de
-										processo formativo situado impacto de processo formativo
-										processo...
+										<footer class="pergunta-footer">
+											<button class="btn-mais">
+												<img
+													src="./assets/icons/more.svg"
+													alt="icone de menu"
+												/>
+											</button>
+											<button class="btn-like">
+												<img
+													src="./assets/icons/icon-favorite.svg"
+													alt="Icone de like da pergunta"
+												/>
+											</button>
+											<span>1 like</span>
+											<span
+												data-bs-target="#collapse-respostas1"
+												data-bs-toggle="collapse"
+												class="respostas-text"
+												>1 resposta</span
+											>
+										</footer>
 									</div>
-									<footer class="pergunta-footer">
-										<button class="btn-mais">
-											<img src="./assets/icons/more.svg" alt="icone de menu" />
-										</button>
-										<button class="btn-like">
-											<img
-												src="./assets/icons/icon-favorite.svg"
-												alt="Icone de like da pergunta"
-											/>
-										</button>
-										<span>4 likes</span>
-										<span
-											data-bs-target="#collapse-respostas2"
-											data-bs-toggle="collapse"
-											class="respostas-text"
-											>4 respostas</span
-										>
-									</footer>
+									<div
+										id="collapse-respostas1"
+										class="pergunta-respostas collapse"
+									>
+										<div class="resposta resposta-autor">
+											<div class="resposta__conteudo">
+												<div class="resposta-header">
+													Adriano da Silva
+													<div class="autor-badge">
+														<span>Autor</span>
+														<img
+															src="./assets/icons/icon-autor-coautor.svg"
+															alt=""
+														/>
+													</div>
+												</div>
+												<div class="resposta-body">
+													Resposta do autor é aqui. Relato inscreve-se no campo
+													da análise da dimensão e impacto de processo formativo
+													situado impacto de processo formativo processo resente
+													relato inscreve-se no campo da análise da dimensão e
+													impacto de processo formativo situado impacto de
+													processo formativo processo.
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div
-									id="collapse-respostas2"
-									class="pergunta-respostas collapse"
-								>
-									<div class="resposta resposta-autor">
-										<div class="resposta__conteudo">
-											<div class="resposta-header">
-												Adriano da Silva
-												<div class="autor-badge">
-													<span>Autor</span>
-													<img
-														src="./assets/icons/icon-autor-coautor.svg"
-														alt=""
-													/>
+								<div class="pergunta">
+									<div class="pergunta-container">
+										<header class="pergunta-header">
+											<div class="pergunta__assunto">
+												Assunto da pergunta aparece aqui
+											</div>
+											<div class="pergunta__autor">Carlos Henrique Santos</div>
+										</header>
+										<div class="pergunta-body">
+											Comecinho da pergunta aparece aqui resente relato
+											inscreve-se no campo da análise da dimensão e impacto de
+											processo formativo situado impacto de processo formativo
+											processo...
+										</div>
+										<footer class="pergunta-footer">
+											<button class="btn-mais">
+												<img
+													src="./assets/icons/more.svg"
+													alt="icone de menu"
+												/>
+											</button>
+											<button class="btn-like">
+												<img
+													src="./assets/icons/icon-favorite.svg"
+													alt="Icone de like da pergunta"
+												/>
+											</button>
+											<span>4 likes</span>
+											<span
+												data-bs-target="#collapse-respostas2"
+												data-bs-toggle="collapse"
+												class="respostas-text"
+												>4 respostas</span
+											>
+										</footer>
+									</div>
+									<div
+										id="collapse-respostas2"
+										class="pergunta-respostas collapse"
+									>
+										<div class="resposta resposta-autor">
+											<div class="resposta__conteudo">
+												<div class="resposta-header">
+													Adriano da Silva
+													<div class="autor-badge">
+														<span>Autor</span>
+														<img
+															src="./assets/icons/icon-autor-coautor.svg"
+															alt=""
+														/>
+													</div>
+												</div>
+												<div class="resposta-body">
+													Resposta do autor é aqui. Relato inscreve-se no campo
+													da análise da dimensão e impacto de processo formativo
+													situado impacto de processo formativo processo resente
+													relato inscreve-se no campo da análise da dimensão e
+													impacto de processo formativo situado impacto de
+													processo formativo processo.
 												</div>
 											</div>
-											<div class="resposta-body">
-												Resposta do autor é aqui. Relato inscreve-se no campo da
-												análise da dimensão e impacto de processo formativo
-												situado impacto de processo formativo processo resente
-												relato inscreve-se no campo da análise da dimensão e
-												impacto de processo formativo situado impacto de
-												processo formativo processo.
-											</div>
 										</div>
-									</div>
-									<div class="resposta">
-										<div class="resposta__conteudo">
-											<div class="resposta-header">Carlos Henrique Santos</div>
-											<div class="resposta-body">
-												Consegui entender melhor agora! Parece que a variação da
-												análise da dimensão e impacto de processo formativo
-												situado impacto de processo formativo. <br />
-												<br />
-												Obrigada pela resposta, muito interessante o seu
-												trabalho!
-											</div>
-										</div>
-									</div>
-									<div class="resposta resposta-autor">
-										<div class="resposta__conteudo">
-											<div class="resposta-header">
-												Carmila Ferreira Andrade
-												<div class="autor-badge">
-													<span>Coautor</span>
-													<img
-														src="./assets/icons/icon-autor-coautor.svg"
-														alt=""
-													/>
+										<div class="resposta">
+											<div class="resposta__conteudo">
+												<div class="resposta-header">
+													Carlos Henrique Santos
+												</div>
+												<div class="resposta-body">
+													Consegui entender melhor agora! Parece que a variação
+													da análise da dimensão e impacto de processo formativo
+													situado impacto de processo formativo. <br />
+													<br />
+													Obrigada pela resposta, muito interessante o seu
+													trabalho!
 												</div>
 											</div>
-											<div class="resposta-body">
-												Também ínteressante lembrar que o relato inscreve-se no
-												campo da análise da dimensão e impacto de processo
-												formativo situado impacto de processo formativo processo
-												resente relato inscreve-se no campo da análise da
-												dimensão e impacto de processo formativo situado impacto
-												de processo formativo processo. <br />
-												<br />
-												Situado impacto de processo formativo processo resente
-												relato inscreve-se no campo da análise da dimensão e
-												impacto de processo formativo situado impacto de
-												processo formativo processo.
-											</div>
 										</div>
-									</div>
-									<div class="resposta resposta-autor">
-										<div class="resposta__conteudo">
-											<div class="resposta-header">
-												Ana Carolina
-												<div class="autor-badge">
-													<span>Autor</span>
-													<img
-														src="./assets/icons/icon-autor-coautor.svg"
-														alt=""
-													/>
+										<div class="resposta resposta-autor">
+											<div class="resposta__conteudo">
+												<div class="resposta-header">
+													Carmila Ferreira Andrade
+													<div class="autor-badge">
+														<span>Coautor</span>
+														<img
+															src="./assets/icons/icon-autor-coautor.svg"
+															alt=""
+														/>
+													</div>
+												</div>
+												<div class="resposta-body">
+													Também ínteressante lembrar que o relato inscreve-se
+													no campo da análise da dimensão e impacto de processo
+													formativo situado impacto de processo formativo
+													processo resente relato inscreve-se no campo da
+													análise da dimensão e impacto de processo formativo
+													situado impacto de processo formativo processo. <br />
+													<br />
+													Situado impacto de processo formativo processo resente
+													relato inscreve-se no campo da análise da dimensão e
+													impacto de processo formativo situado impacto de
+													processo formativo processo.
 												</div>
 											</div>
-											<div class="resposta-body">
-												Resposta do autor é aqui. Relato inscreve-se no campo da
-												análise da dimensão e impacto de processo formativo
-												situado impacto de processo formativo processo resente
-												relato inscreve-se no campo da análise da dimensão e
-												impacto de processo formativo situado impacto de
-												processo formativo processo.
+										</div>
+										<div class="resposta resposta-autor">
+											<div class="resposta__conteudo">
+												<div class="resposta-header">
+													Ana Carolina
+													<div class="autor-badge">
+														<span>Autor</span>
+														<img
+															src="./assets/icons/icon-autor-coautor.svg"
+															alt=""
+														/>
+													</div>
+												</div>
+												<div class="resposta-body">
+													Resposta do autor é aqui. Relato inscreve-se no campo
+													da análise da dimensão e impacto de processo formativo
+													situado impacto de processo formativo processo resente
+													relato inscreve-se no campo da análise da dimensão e
+													impacto de processo formativo situado impacto de
+													processo formativo processo.
+												</div>
 											</div>
 										</div>
 									</div>

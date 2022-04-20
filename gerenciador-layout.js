@@ -20,16 +20,3 @@ resumoDOM.addEventListener("click", () => {
 	}
 	resumoExpandido = !resumoExpandido;
 });
-
-//caixa de entrada de texto para novo topico
-
-let quill = new Quill("#editor-texto", {
-	modules: {
-		toolbar: {
-			container: "#editor-toolbar__toolbar"
-		}
-	},
-	theme: "snow"
-});
-
-console.log(quill);

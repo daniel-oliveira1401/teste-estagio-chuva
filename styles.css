@@ -556,8 +556,8 @@ que esta presente na parte superior da imagem */
 
 .btn-criar-topico__divisor {
 	position: absolute;
-	height: 2px;
-	background-color: #e7e7e7;
+	height: 0px;
+	border: 1px solid #e7e7e7;
 	width: 100%;
 	top: calc(50% - 2px);
 	z-index: -1;
@@ -587,6 +587,7 @@ que esta presente na parte superior da imagem */
 
 .novo-topico {
 	width: 100%;
+	display: none;
 }
 
 .novo-topico__header {
@@ -681,11 +682,53 @@ que esta presente na parte superior da imagem */
 	border-radius: 0px 0px 3px 0px;
 }
 
+.agradecimento-topico {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+}
+
+.agradecimento-topico > h2 {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 21px;
+	text-align: center;
+	color: #ed7839;
+	margin-bottom: 18px;
+}
+
+.agradecimento-topico > h4 {
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	text-align: center;
+	color: #595959;
+	margin-bottom: 29px;
+}
+
+.agradecimento-topico > a {
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 137.5%;
+	text-align: center;
+	text-decoration-line: underline;
+	color: #f48f44;
+	margin-bottom: 47px;
+}
+
 /* ================================ perguntas ==============================*/
 
 .pergunta {
 	border-radius: 4px;
 	border: 1px solid #e7e7e7;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12);
+	overflow: hidden;
 }
 
 .pergunta:not(:last-child) {
@@ -751,6 +794,61 @@ que esta presente na parte superior da imagem */
 .pergunta-footer .respostas-text {
 	cursor: pointer;
 }
+
+.pergunta-overlay {
+	position: relative;
+}
+
+.pergunta-overlay__overlay {
+	display: none;
+	z-index: 9999;
+}
+
+.pergunta.pergunta-overlay > .pergunta-container {
+	filter: blur(3px);
+	background-color: #ddd;
+	opacity: 0.3;
+}
+
+.pergunta-overlay .pergunta-overlay__overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.pergunta-overlay__overlay h3 {
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #707070;
+	margin-bottom: 8px;
+}
+
+.pergunta-overlay__overlay a {
+	font-family: "Segoe UI";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	text-decoration-line: underline;
+	color: #ed7839;
+}
+
+.pergunta-overlay__overlay .icon-feedback {
+	fill: black;
+	height: 21px;
+	margin-bottom: 7.78px;
+}
+
+/* ================= respostas da perguntas ============================== */
 
 .pergunta-respostas .resposta {
 	border-top: 1px solid #e7e7e7;
