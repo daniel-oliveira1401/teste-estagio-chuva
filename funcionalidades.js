@@ -7,13 +7,16 @@ let quill = new Quill("#editor-texto", {
 	},
 	theme: "snow"
 });
+
+//elementos html
+
 let novoTopico = document.getElementById("novo-topico");
 let agradecimentoTopico = document.querySelector(".agradecimento-topico");
 let homeTopico = document.getElementById("home-topico");
-//mostrar o editor de topico quando o botao "criar topico" for clicado
-
 let btnCriarTopico = document.getElementById("btn-criar-topico");
 let btnCriarNovoTopico = document.getElementById("btn-criar-novo-topico");
+
+//mostrar o editor de topico quando o botao "criar topico" e/ou "criar novo topico" for clicado
 
 function mostrarEditorTopico() {
 	homeTopico.style.display = "none";
@@ -105,4 +108,8 @@ novoTopico.addEventListener("submit", (e) => {
 	//"agradecimento pela criacao do novo topico"
 	novoTopico.style.display = "none";
 	agradecimentoTopico.style.display = "flex";
+
+	//atualiza os listeners do bootstrap
+	//(esta funcao vem do arquivo 'gerenciador-layouts.js')
+	registrarEventosBootstrap();
 });
