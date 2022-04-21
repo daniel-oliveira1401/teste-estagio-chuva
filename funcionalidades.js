@@ -1,5 +1,5 @@
 //caixa de entrada de texto para novo topico
-let quill = new Quill("#editor-texto", {
+let quill = new Quill("#text-editor", {
 	modules: {
 		toolbar: {
 			container: "#editor-toolbar__toolbar"
@@ -9,32 +9,32 @@ let quill = new Quill("#editor-texto", {
 });
 
 //elementos html
-let novoTopico = document.getElementById("novo-topico");
-let agradecimentoTopico = document.querySelector(".agradecimento-topico");
-let homeTopico = document.getElementById("home-topico");
+let novoTopico = $("#new-topic");
+let agradecimentoTopico = $(".acknowledgment-topic");
+let homeTopico = $("#home-topic");
 
 //mostrar o editor de topico quando o botao "criar topico" e/ou "criar novo topico" for clicado
 
 function mostrarEditorTopico() {
-	homeTopico.style.display = "none";
-	novoTopico.style.display = "block";
-	agradecimentoTopico.style.display = "none";
+	homeTopico.css("display", "none");
+	novoTopico.css("display", "block");
+	agradecimentoTopico.css("display", "none");
 }
 
-$("#btn-criar-topico").click(mostrarEditorTopico);
-$("#btn-criar-novo-topico").click(mostrarEditorTopico);
+$("#btn-create-topic").click(mostrarEditorTopico);
+$("#btn-create-new-topic").click(mostrarEditorTopico);
 
 //mostrar a tela de "agradecimento pela criacao do topico" quando o formulario do novo
 //topico for enviado
 
-novoTopico.addEventListener("submit", (e) => {
+novoTopico.on("submit", (e) => {
 	//evitar o formulario de causar a pagina recarregar
 	e.preventDefault();
 	e.stopPropagation();
 
 	//assunto do novo topico
-	let assunto = document.querySelector(".assunto__input").value;
-	$(".assunto__input").val("");
+	let assunto = $(".subject__input").val();
+	$(".subject__input").val("");
 
 	//conteudo do novo topico
 	let conteudo = quill.getText();
@@ -46,8 +46,8 @@ novoTopico.addEventListener("submit", (e) => {
 
 	//template HTML de uma pergunta com o overlay
 	let novaPergunta = `
-  <div class="pergunta pergunta-overlay">
-    <div class="pergunta-overlay__overlay">
+  <div class="question question-overlay">
+    <div class="question-overlay__overlay">
       <svg
         class="icon-feedback"
         viewBox="0 0 21 21"
@@ -61,18 +61,18 @@ novoTopico.addEventListener("submit", (e) => {
       <h3>Aguardando feedback dos autores</h3>
       <a href="#">Editar tópico</a>
     </div>
-    <div class="pergunta-container">
-      <header class="pergunta-header">
-        <div class="pergunta__assunto">
+    <div class="question-container">
+      <header class="question-header">
+        <div class="question__subject">
           ${assunto}
         </div>
-        <div class="pergunta__autor">${usuario}</div>
+        <div class="question_author">${usuario}</div>
       </header>
-      <div class="pergunta-body">
+      <div class="question-body">
         ${conteudo}
       </div>
-      <footer class="pergunta-footer">
-        <button class="btn-mais">
+      <footer class="question-footer">
+        <button class="btn-more">
           <img src="./assets/icons/more.svg" alt="icone de menu" />
         </button>
         <button class="btn-like">
@@ -83,28 +83,28 @@ novoTopico.addEventListener("submit", (e) => {
         </button>
         <span>0 like</span>
         <span
-          data-bs-target="#collapse-respostas3"
+          data-bs-target="#collapse-replies3"
           data-bs-toggle="collapse"
-          class="respostas-text"
+          class="replies-text"
           >0 resposta</span
         >
       </footer>
     </div>
     <div
-      id="collapse-respostas3"
-      class="pergunta-respostas collapse"
+      id="collapse-replies3"
+      class="question-replies collapse"
     >
     </div>
   </div>
   `;
 
 	//adiciona a pergunta ao documento html na secao de perguntas
-	$(".perguntas").prepend(novaPergunta);
+	$(".questions").prepend(novaPergunta);
 
 	//esconde o formulario de nova pergunta, e mostra a tela de
 	//"agradecimento pela criacao do novo topico"
-	novoTopico.style.display = "none";
-	agradecimentoTopico.style.display = "flex";
+	novoTopico.css("display", "none");
+	agradecimentoTopico.css("display", "flex");
 
 	//atualiza os listeners do bootstrap
 	//(esta funcao vem do arquivo 'gerenciador-layouts.js')
