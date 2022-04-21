@@ -9,12 +9,9 @@ let quill = new Quill("#editor-texto", {
 });
 
 //elementos html
-
 let novoTopico = document.getElementById("novo-topico");
 let agradecimentoTopico = document.querySelector(".agradecimento-topico");
 let homeTopico = document.getElementById("home-topico");
-let btnCriarTopico = document.getElementById("btn-criar-topico");
-let btnCriarNovoTopico = document.getElementById("btn-criar-novo-topico");
 
 //mostrar o editor de topico quando o botao "criar topico" e/ou "criar novo topico" for clicado
 
@@ -24,9 +21,8 @@ function mostrarEditorTopico() {
 	agradecimentoTopico.style.display = "none";
 }
 
-btnCriarTopico.addEventListener("click", mostrarEditorTopico);
-
-btnCriarNovoTopico.addEventListener("click", mostrarEditorTopico);
+$("#btn-criar-topico").click(mostrarEditorTopico);
+$("#btn-criar-novo-topico").click(mostrarEditorTopico);
 
 //mostrar a tela de "agradecimento pela criacao do topico" quando o formulario do novo
 //topico for enviado
@@ -42,6 +38,7 @@ novoTopico.addEventListener("submit", (e) => {
 
 	//conteudo do novo topico
 	let conteudo = quill.getText();
+	quill.setText("");
 
 	//o usuario da nova pergunta sera sempre o mesmo pois nao temos acesso
 	//ao nome do usuario nesse exercicio

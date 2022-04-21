@@ -1,12 +1,10 @@
-// funcionalidade de expandir/colapsar da secao "resumo"
-
 //variaveis da secao "resumo"
 let btnVerMais = document.getElementById("btn-ver-mais");
-let resumoDOM = document.getElementById("resumo");
 let resumoConteudo = document.getElementById("resumo__conteudo");
 let resumoExpandido = false;
 
-resumoDOM.addEventListener("click", () => {
+// funcionalidade de expandir/colapsar da secao "resumo"
+$("#resumo").click(() => {
 	if (resumoExpandido) {
 		//colapsa o resumo e mostra o "ver mais"
 
@@ -21,10 +19,6 @@ resumoDOM.addEventListener("click", () => {
 	resumoExpandido = !resumoExpandido;
 });
 
-let collapse = document.getElementById("collapse-respostas1");
-
-//evento gerado pelo bootstrap ao expandir as respostas de uma pergunta
-
 function registrarEventosBootstrap() {
 	//limpar qualquer listener que ja esteja registrado para esses eventos
 	//para evitar listeners duplicados caso essa funcao seja chamada mais
@@ -32,6 +26,7 @@ function registrarEventosBootstrap() {
 	$(".collapse").unbind("show.bs.collapse");
 	$(".collapse").unbind("hide.bs.collapse");
 
+	//evento gerado pelo bootstrap ao expandir as respostas de uma pergunta
 	$(".collapse").on("show.bs.collapse", (e) => {
 		//✨ magia jquery ✨
 
@@ -42,8 +37,6 @@ function registrarEventosBootstrap() {
 		let corpoPergunta = $(pergunta).find(".pergunta-body");
 		$(corpoPergunta).addClass("pergunta-body-expanded");
 	});
-
-	//collapse.addEventListener("show.bs.collapse", );
 
 	//evento gerado pelo bootstrap ao colapsar as respostas de uma pergunta
 	$(".collapse").on("hide.bs.collapse", (e) => {
