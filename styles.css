@@ -758,15 +758,17 @@ que está presente na parte superior da imagem */
 	font-size: 16px;
 	line-height: 20px;
 	color: var(--primary);
+	margin-bottom: 5px;
 }
 
 .pergunta-header .pergunta__autor {
 	font-family: var(--font-quicksand);
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 12px;
 	line-height: 15px;
 	color: #5c5c5c;
+	margin-bottom: 10px;
 }
 
 .pergunta-body {
@@ -777,6 +779,15 @@ que está presente na parte superior da imagem */
 	display: -webkit-box;
 	overflow: hidden;
 	-webkit-box-orient: vertical;
+	margin-bottom: 0;
+
+	font-family: "Quicksand";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+
+	color: #4d4d4d;
 }
 
 .pergunta-body-expanded {
