@@ -143,7 +143,7 @@ que está presente na parte superior da imagem */
 	appearance: none;
 	border: none;
 	background-color: transparent;
-	background-image: url("./assets/icons/icon-dropdown.svg");
+	background-image: url("../assets/icons/icon-dropdown.svg");
 	display: inline-block;
 	background-repeat: no-repeat;
 	background-position: right 13px center;
@@ -154,10 +154,6 @@ que está presente na parte superior da imagem */
 	font-size: 14px;
 	line-height: 18px;
 	color: #333333;
-}
-
-.select-language-icon {
-	background-image: url("./assets/icons/icon-language.svg");
 }
 
 /* ---------- header - informacao de usuario -------------- */
@@ -274,13 +270,13 @@ que está presente na parte superior da imagem */
 .video-overlay__caption {
 	display: flex;
 	align-items: center;
-	gap: 19px;
 }
 
 .video-overlay__caption img {
 	border-radius: 10rem;
 	border: 1px solid var(--primary);
 	padding: 4.57px;
+	margin-right: 19px;
 }
 
 .caption .caption__name {
@@ -315,7 +311,6 @@ que está presente na parte superior da imagem */
 .details-column__buttons {
 	display: flex;
 	justify-content: flex-end;
-	gap: 5px;
 }
 
 .details-column__buttons .btn {
@@ -323,13 +318,17 @@ que está presente na parte superior da imagem */
 	color: var(--text-light);
 	display: flex;
 	align-items: center;
-	gap: 5px;
 	font-size: 16px;
 	line-height: 19px;
 	font-family: var(--font-roboto);
 	font-style: normal;
 	font-weight: 500;
 	border-radius: 4px;
+	margin-left: 5px;
+}
+
+.details-column__buttons .btn-download span {
+	margin-left: 5px;
 }
 
 .details-column > h3 {
@@ -542,8 +541,11 @@ que está presente na parte superior da imagem */
 
 .icons-bar {
 	display: flex;
-	gap: 51.74px;
 	margin-bottom: 35.06px;
+}
+
+.icons-bar :not(:last-child) {
+	margin-right: 51.74px;
 }
 
 .home-topic > p {
@@ -593,8 +595,11 @@ que está presente na parte superior da imagem */
 	line-height: 16px;
 	text-align: center;
 	display: flex;
-	gap: 6px;
 	color: var(--text-light);
+}
+
+.btn-create-topic__btn span {
+	margin-left: 6px;
 }
 
 /* ========================= editor de new topico ======================== */
@@ -811,7 +816,10 @@ que está presente na parte superior da imagem */
 	margin-top: 11px;
 	display: flex;
 	align-items: center;
-	gap: 15px;
+}
+
+.question-footer :not(:last-child) {
+	margin-right: 15px;
 }
 
 .question-footer button {
